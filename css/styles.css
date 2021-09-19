@@ -128,23 +128,23 @@ section {
   width: 30px;
   text-align: center;
   border-radius: 10px;
-  opacity: 0;
+  opacity: 0.8;
   font-size: x-large;
   font-weight: bolder;
   cursor: pointer;
   position: fixed;
-  bottom: 10px;
+  bottom: -60px;
   right: 10px;
   padding: 5px;
   z-index: 3;
-  transition: 0.5s;
+  transition: 0.7s;
 }
 .top:hover {
   background-color: rgb(255, 166, 0);
   opacity: 1;
 }
 .top.show {
-  opacity: 0.8;
+  bottom: 10px;
 }
 @media only screen and (min-width: 35em) {
   .landing__container {
