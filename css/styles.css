@@ -139,6 +139,10 @@ section {
   z-index: 3;
   transition: 0.5s;
 }
+.top:hover {
+  background-color: rgb(255, 166, 0);
+  opacity: 1;
+}
 .top.show {
   opacity: 0.8;
 }
