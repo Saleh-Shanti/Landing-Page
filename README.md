@@ -1,16 +1,18 @@
-# Landing Page Project
+1. About the Project
+   **This project for Udacity frontend course , I used the default (HTML , CSS )template provided by udacity and worked on the javascript file to make this landing page interactive**
 
-## Table of Contents
+   - Built With :
+     _ HTML
+     _ CSS
+     - Javascript
 
-- [Instructions](#instructions)
+1. Project Functionality :
+   - Dynamic creation of the navigation menu
+   - Active sections when its appears in the viewport
+   - Highlighted navigation menu when the related section is active
+   - Scroll To the related section when click on the menu link
+   - To Top button , for scrolling to the top of the page
 
-## Instructions
+### Project Link :
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-This project for Udacity frontend course , I used the default (HTML , CSS )template provided by udacity and worked on the javascript file to make this landing page interactive
-
-I've added :
-1\ \_ Dynamic Navbar list with js .
-2_Applied "active" class to the sections that just appears at the viewport .
-3_Scrolling to the speacific section when click on the anchor tag and make it smooth scroll.
+- https://saleh-shanti.github.io/Landing-Page/ - automatic!

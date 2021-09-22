@@ -1,49 +1,45 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
+
 
 /**
  * Define Global Variables
- * 
+ 
 */
 const navList= document.getElementById('navbar__list');
 const section = document.querySelectorAll('section');
 const header=document.querySelector('.page__header');
 const toTop=document.querySelector('.top');
+let isScrolling;
 
 /**
  * End Global Variables
+ * 
  * Start Helper Functions
  * 
 */
 
+// function to add navbar Dynamically
 
-// function to add the navbar list 
-
-let addListElement = Label => 
+let dynamicAddNavbar=()=>
     {
+
+        for(sec of section)
+            {
+                let navListItem =document.createElement('li');
+                let navLink=document.createElement('a');
+                navLink.classList.add('menu__link');
+                let navLinkText=sec.id;
+                navLink.innerHTML=navLinkText;
                 
-        let navListItem =document.createElement('li');
-        let navLink=document.createElement('a');
-        navLink.classList.add('menu__link');
-        let navLinkText=document.createTextNode(Label);
-        navLink.appendChild(navLinkText);
-        // To navigate to the specific section when its clicked
-        navLink.href=`#${Label}`;
-        navListItem.appendChild(navLink);
-        navList.appendChild(navListItem);
+                navLink.href=`#${sec.id}`;
+                navListItem.append(navLink);
+                navList.appendChild(navListItem);
+                
+            }
+
     }
+
+
+
 
 
 // function to Check if the section is in the viewport 
@@ -66,14 +62,9 @@ let isInViewport = function (elem)
  * 
 */
 
-// build the nav
-
 // Adding the navbar list Items 
 
-addListElement("Home");
-addListElement("Projects");
-addListElement("About");
-addListElement('Contact');
+dynamicAddNavbar();
 
 
 // To show the To Top span in the screen
@@ -95,6 +86,7 @@ const navLink=document.querySelectorAll('.menu__link');
 */
 
 // scroll to top span event listener
+
 toTop.addEventListener('click',
     ()=>{
             window.scrollTo({
@@ -137,24 +129,40 @@ document.addEventListener('scroll',
         {
 
             // To remove class (active) if it exist " We dont need more than one section with class active "
+            
+            for(const active of section)
+                {   
+                   // loop over the navbar links to remove active class
+
+                    for (const item of navLink) 
+                        {
+                            item.classList.remove('highlight');
+                        }
+
+                    active.classList.remove('active');
+                }
+
+            // To Check if the current section is in the viewport and add class (active) to section and navbar if it in the viewport
 
             for(const active of section)
-            {active.classList.remove('active');}
-
-            // To Check if the current section is in the viewport and add class (active) if it in the viewport
-            for(const active of section){
-            if(isInViewport(active) )
-        
-            active.classList.add('active');
-            
-        }
+                {
+                    if(isInViewport(active) )
+                        {
+                            for (const item of navLink) 
+                            {
+                                if(item.innerText==active.id)
+                                {item.classList.add('highlight');}
+                            }
+                            active.classList.add('active');
+                        }
+                }
 
 });
 
  
 // To hide the navbar when the user is not scrolling
 
-let isScrolling;
+
 
 window.addEventListener('scroll',  ()=> {
     header.classList.remove('hide_nav');
