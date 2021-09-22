@@ -1,4 +1,5 @@
-1. About the Project
+1. About the Project : 
+
    **This project for Udacity frontend course , I used the default (HTML , CSS )template provided by udacity and worked on the javascript file to make this landing page interactive**
 
    - Built With :
