@@ -47,18 +47,19 @@ let dynamicAddNavbar=()=>
 let isInViewport = function (elem) 
     {
         let bounding = elem.getBoundingClientRect();
-        return (
-            bounding.top >= 0 &&
-            bounding.left >= 0 &&
-            bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+        return (        
+            ( bounding.top <= 90 && bounding.top >= 0 ) ||
+            (bounding.bottom >=200 && bounding.bottom <=900)
+
+            
         );
     };
     
     
 /**
  * End Helper Functions
- * Begin Main Functions
+ * Begin Main Functions        bounding.top >= 0 &&
+            bounding.top <= (window.innerHeight || document.documentElement.clientHeight)
  * 
 */
 
@@ -134,6 +135,7 @@ document.addEventListener('scroll',
                 {   
                    // loop over the navbar links to remove active class
 
+                  
                     for (const item of navLink) 
                         {
                             item.classList.remove('highlight');
@@ -147,7 +149,7 @@ document.addEventListener('scroll',
             for(const active of section)
                 {
                     if(isInViewport(active) )
-                        {
+                        { 
                             for (const item of navLink) 
                             {
                                 if(item.innerText==active.id)
