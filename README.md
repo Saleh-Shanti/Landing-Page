@@ -4,7 +4,7 @@
    - Built With :
      _ HTML
      _ CSS
-     - Javascript
+     _ Javascript
 
 1. Project Functionality :
    - Dynamic creation of the navigation menu
