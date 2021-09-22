@@ -2,9 +2,10 @@
    **This project for Udacity frontend course , I used the default (HTML , CSS )template provided by udacity and worked on the javascript file to make this landing page interactive**
 
    - Built With :
-     _ HTML
-     _ CSS
-     _ Javascript
+        * HTML
+        * CSS
+        * Javascript
+       
 
 1. Project Functionality :
    - Dynamic creation of the navigation menu
