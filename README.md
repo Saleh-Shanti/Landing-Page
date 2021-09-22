@@ -17,4 +17,4 @@
 
 ### Project Link :
 
-- https://saleh-shanti.github.io/Landing-Page/ - automatic!
+- https://saleh-shanti.github.io/Landing-Page/ 
